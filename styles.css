@@ -1,0 +1,168 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  background-color: #e5e5e5;
+  line-height: 1.5;
+}
+img {
+  max-width: 100%;
+}
+.contenedor {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+.sombra {
+  -webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.75);
+  background-color: white;
+}
+/** Genereales */
+.contenido_principal {
+  padding: 1rem 0;
+}
+.header_logo {
+  margin: 1rem;
+}
+.boton {
+  font-size: medium; /*tamano fuente*/
+  font-family: "Staatliches", cursive;
+  font-weight: 200;
+  border-radius: 25px; /*redondear los bordes*/
+  border: 1px solid #0a3871; /*color y grosor del borde*/
+  padding: 1.5rem; /*hacer ancho el elemento*/
+  cursor: pointer; /*cursor actua como enlace*/
+}
+/** Generales */
+
+.contenido_principal {
+  display: grid;
+  grid-template-rows: 2fr 1fr 2fr 1fr;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+}
+.contenido_formulario--textArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.contenido_textArea {
+  background-color: transparent;
+  border: none;
+  resize: none;
+  color: #0a3871;
+  text-align: center;
+  width: 100%;
+  padding: 1rem;
+  outline: none;
+  font-size: 2rem;
+  font-weight: normal;
+}
+.contenido_botones {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+}
+.ayuda {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.nota {
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: black;
+  font-family: "Staatliches", cursive;
+  font-weight: 300;
+}
+.boton--encriptar {
+  min-width: 20%;
+  color: white;
+  background-color: #0a3871;
+  transition: background-color 0.3s ease;
+}
+.boton--encriptar:hover {
+  background-color: #072244;
+}
+.boton--desencriptar {
+  min-width: 20%;
+}
+.contenido_resultado--texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 400;
+  word-break: break-all; /*Impide que se salga el texto de su cuadro*/
+}
+.contenido_resultado--botonCopiar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+.boton--copiar {
+  min-width: 30%;
+}
+.footer {
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+.footer_texto {
+  font-size: 1.4rem;
+  font-family: "Staatliches", cursive;
+  font-weight: 300;
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .contenido_principal {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+  }
+  .contenido_textArea {
+    word-break: break-all;
+  }
+  .ayuda {
+    grid-row: 3/4;
+    max-height: 50%;
+  }
+  .contenido_resultado--texto {
+    margin: 0 0;
+    grid-column: 2/3;
+    grid-row: 1/4;
+  }
+  .contenido_resultado--botonCopiar {
+    width: 100%;
+    grid-column: 2/3;
+    grid-row: 4/5;
+  }
+  .boton--copiar {
+    max-width: 40%;
+  }
+  .footer_texto {
+    font-size: 2rem;
+    font-weight: normal;
+    text-align: center;
+  }
+}

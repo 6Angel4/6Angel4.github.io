@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Pagina Web que realiza encriptacion y desencriptacion de textos"
+    />
+
+    <!--Preload-->
+    <link rel="preload" href="normalize.css" />
+    <link rel="preload" href="styles.css" />
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <!--Fuentes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap"
+      rel="stylesheet"
+    />
+    <title>Encriptador de Texto</title>
+  </head>
+  <body>
+    <!--cabezera-->
+    <header class="header">
+      <a href="index.html">
+        <img class="header_logo" src="logo.png" alt="Aqui va un logo" />
+      </a>
+    </header>
+    <!--.cabezera-->
+
+    <!--Contenido Principal-->
+    <main class="contenido_principal contenedor">
+      <form class="contenido_formulario--textArea">
+        <textarea
+          onkeypress="return (event.charCode >= 97 && event.charCode <= 122 || event.charCode === 241 || event.charCode === 32 || event.charCode === 63 )"
+          required
+          autofocus
+          id="contenido_textArea"
+          class="contenido_textArea"
+          placeholder="Ingesa el texto a encriptar o des-encriptar"
+        ></textarea>
+      </form>
+      <div class="ayuda">
+        <div class="contenido_nota">
+          <p class="nota">Solo minusculas y sin acentos</p>
+        </div>
+        <div class="contenido_botones">
+          <button class="boton boton--encriptar" id="boton--encriptar">
+            Encriptar
+          </button>
+          <button class="boton boton--desencriptar" id="boton--desencriptar">
+            Des-encriptar
+          </button>
+        </div>
+      </div>
+      <div
+        class="contenido_resultado--texto sombra"
+        id="contenido_resultado--texto"
+      ></div>
+      <div class="contenido_resultado--botonCopiar">
+        <button class="boton boton--copiar" id="boton--copiar">Copiar</button>
+      </div>
+    </main>
+    <!--Contenido Principal-->
+
+    <!--footer-->
+    <footer class="footer">
+      <p class="footer_texto">
+        Todos los Derechos Reservados. Miguel Angel Ortega Gomez. 2023
+      </p>
+    </footer>
+    <!--.footer-->
+  </body>
+
+  <!--Scripts-->
+  <script src="app.js"></script>
+  <!--.Scripts-->
+</html>
